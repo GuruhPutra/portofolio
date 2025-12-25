@@ -8,180 +8,430 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <style>
-        .about-text p {
-            text-align: justify;
+        :root {
+            --primary-color: #06b6d4;
+            --text-light: #cffafe;
+            --text-muted: #a5f3fc;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-main {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            width: 100%;
+            min-height: 100vh;
+            align-items: start;
+        }
+
+        /* Row 1 - Top Section */
+        .row-1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .project-header {
+            max-width: 800px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            color: #fff;
+        }
+
+        .project-title {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, #d1d5db 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* Tools and Button Section */
+        .tools-button-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .tools-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tools-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .tools-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .tool-badge {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.5) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-badge:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+        }
+
+        .tool-badge i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .buttons-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-custom {
+            padding: 14px 40px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4f46e5 100%);
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+            color: white;
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary-custom:hover {
+            border-color: var(--primary-color);
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-3px);
+            color: var(--text-light);
+        }
+
+        /* Row 2 - Bottom Section */
+        .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Project Image */
+        .project-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.5) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-container:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Key Features */
+        .features-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .features-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 4px;
+            width: 60px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .feature-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container-main {
+                grid-template-rows: auto auto;
+                gap: 50px;
+                padding: 50px 20px;
+            }
+
+            .row-2 {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .tools-button-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+
+            .buttons-group {
+                width: 100%;
+            }
+
+            .btn-custom {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container-main {
+                padding: 40px 20px;
+                gap: 40px;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-description {
+                font-size: 1rem;
+            }
+
+            .tools-button-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+
+            .buttons-group {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn-custom {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features-title {
+                font-size: 1.5rem;
+            }
+
+            .feature-text {
+                font-size: 0.95rem;
+            }
+
+            .tools-list {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-        <div class="stars"></div>
-        <div class="container h-100 d-flex align-items-center justify-content-center">
-            <div class="hero-content text-center">
-                <div class="hero-badge mb-4">
-                    <span>Project Details</span>
+    <div class="container-main">
+        <!-- ROW 1 -->
+        <div class="row-1">
+            <div class="project-header">
+                <a href="../index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Portfolio
+                </a>
+
+                <h1 class="project-title">GETEKSI 2025</h1>
+
+                <p class="project-description">
+                    Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal GETEKSI secara otomatis dengan menggunakan bahasa pemrograman Python. Tujuan utama dari program ini adalah untuk membantu pengguna, terutama pelajar, dalam menyelesaikan soal-soal GETEKSI dengan lebih cepat dan mudah.
+                </p>
+            </div>
+
+            <div class="tools-button-section">
+                <div class="tools-group">
+                    <div class="tools-label">
+                        <i class="fas fa-code"></i> Technologies Used
+                    </div>
+                    <div class="tools-list">
+                        <div class="tool-badge">
+                            <i class="fab fa-python"></i> Python
+                        </div>
+                    </div>
                 </div>
-                <h1 class="hero-title display-1 fw-900 mb-4">
-                    GETEKSI-2025
-                </h1>
-                <p class="hero-subtitle mb-4">Social Media Design</p>
-                <p class="hero-description mb-5">Modern social media feed design for an event, focusing on visual consistency, clear information hierarchy, and audience engagement.</p>
-                <div class="hero-buttons">
-                    <a href="../index.html" class="btn btn-light btn-lg rounded-pill px-5 me-3 shadow-lg">
-                        <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
-                    </a>
-                    <a href="https://www.instagram.com/geteksi.official/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-lg">
-                        <i class="fab fa-instagram me-2"></i> View on Instagram
-                    </a>
+
+                <div class="buttons-group">
+                    <button class="btn btn-light btn-lg rounded-pill px-4 shadow-lg" onclick="window.location.href='#demo'">
+                        <i class="fas fa-play me-2"></i> Live Demo
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill px-4 shadow-lg" onclick="window.open('https://github.com', '_blank')">
+                        <i class="fab fa-github me-2"></i> Github
+                    </button>
                 </div>
             </div>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <section class="main-content">
-        <!-- Stars Background -->
-        <div class="content-stars"></div>
-
-        <!-- Project Photo Section -->
-        <div class="section" id="project-photo">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Project Photo</h2>
-                    <div class="header-line"></div>
+        <!-- ROW 2 -->
+        <div class="row-2">
+            <!-- Project Image -->
+            <div class="project-image">
+                <div class="image-container">
+                    <img src="../assets/image/project/GETEKSI 2025.png" alt="GETEKSI 2025 Project">
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="portfolio-card tilt reveal">
-                            <div class="portfolio-preview">
-                                <img src="../assets/image/project/GETEKSI 2025.png" alt="GETEKSI 2025 Project Image" class="img-fluid">
-                            </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="features-container">
+                <h2 class="features-title">Key Features</h2>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        <div class="feature-text">
+                            Menghitung suku tertentu dari barisan aritmatika dengan menggunakan rumus suku ke-n.
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        <div class="feature-text">
+                            Menentukan suku pertama atau beda jika hanya dua suku diketahui dalam barisan aritmatika.
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        <div class="feature-text">
+                            Menghitung jumlah n suku pertama dari deret aritmatika dengan langkah perhitungan yang jelas.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Project Description Section -->
-        <div class="section" id="project-description">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Project Description</h2>
-                    <div class="header-line"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="about-text">
-                            <p>This project involved the collaborative design of an Instagram feed for the GETEKSI event as a visual communication and promotional medium, supporting three key phases: pre-event promotion, real-time event updates, and post-event documentation. The design process utilized Adobe Photoshop as the primary tool for visual composition, layout arrangement, and maintaining visual consistency across posts, with careful attention to color harmony, typography, and information hierarchy to ensure clarity and cohesion. The primary objective was to present event information in a clear and engaging manner while reinforcing a consistent visual identity, and the resulting increase in views demonstrated that the visual strategy effectively captured audience attention and supported the event’s promotional goals.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Reflection Section -->
-        <div class="section" id="project-reflection">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Project Reflection</h2>
-                    <div class="header-line"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="about-text">
-                            <p>The GETEKSI project focused on creating a cohesive Instagram feed design to serve as a promotional and documentation tool for the event. The project was carried out in a team-based environment, where I contributed to the design process by developing visual layouts, refining design elements using Adobe Photoshop, and ensuring consistency across multiple feed posts. The designs were adapted to different event phases, requiring flexibility while maintaining a unified visual identity.</p>
-                            <p>This project highlighted the strategic role of Instagram feed design in shaping audience perception of an event’s professionalism and quality. The observed increase in views demonstrated that consistent visual design and clear information delivery can significantly enhance audience engagement. Additionally, the collaborative nature of the project emphasized the importance of teamwork, shared design direction, and effective visual communication. The experience reinforced my understanding that social media design is not solely about aesthetics, but also about conveying messages efficiently and influencing audience response.</p>
-                            <p>Moving forward, I plan to further develop my skills in social media design by incorporating more data-driven approaches, such as analyzing engagement metrics and audience behavior. I also aim to explore stronger visual storytelling techniques to enhance content impact across different event stages. The GETEKSI project serves as a valuable foundation for my continued growth in digital and social media design, both in academic settings and future professional projects.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tools Used Section -->
-        <div class="section" id="tools-used">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Tools Used</h2>
-                    <div class="header-line"></div>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="tech-badge tilt reveal">
-                            <div class="tech-icon"><img src="../assets/image/tools/photoshop.png" alt="Photoshop"></div>
-                            <div class="tech-name">Photoshop</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="footer py-5">
-            <div class="container text-center">
-                <p class="m-0">© <span id="year"></span> Guruh Putra Mahendra. All rights reserved.</p>
-            </div>
-        </footer>
-    </section>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../script.js"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // IntersectionObserver reveal animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Parallax effect on scroll for stars layers
-        const parallax = () => {
-            const sc = window.scrollY || document.documentElement.scrollTop;
-            document.querySelectorAll('.content-stars').forEach(s => {
-                s.style.transform = `translateY(${sc * 0.15}px)`;
-            });
-        };
-        window.addEventListener('scroll', parallax, { passive: true });
-
-        // Tilt hover for cards
-        const tiltEls = document.querySelectorAll('.tilt');
-        tiltEls.forEach(card => {
-            const rect = () => card.getBoundingClientRect();
-            const onMove = (e) => {
-                const r = rect();
-                const x = e.clientX - r.left;
-                const y = e.clientY - r.top;
-                const rx = ((y / r.height) - 0.5) * -10;
-                const ry = ((x / r.width) - 0.5) * 10;
-                card.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-            };
-            const reset = () => {
-                card.style.transform = '';
-            };
-            card.addEventListener('mousemove', onMove);
-            card.addEventListener('mouseleave', reset);
-        });
-
-        // Floating stars reacting to mouse (hero)
-        const stars = document.querySelector('.stars');
-        if (stars) {
-            window.addEventListener('mousemove', (e) => {
-                const x = (e.clientX / window.innerWidth - 0.5) * 10;
-                const y = (e.clientY / window.innerHeight - 0.5) * 10;
-                stars.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        }
-    </script>
 </body>
 </html>
