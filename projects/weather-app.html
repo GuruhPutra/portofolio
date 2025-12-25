@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP - Project Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .about-text p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="stars"></div>
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <div class="hero-content text-center">
+                <div class="hero-badge mb-4">
+                    <span>Project Details</span>
+                </div>
+                <h1 class="hero-title display-1 fw-900 mb-4">
+                    WEATHER APP
+                </h1>
+                <p class="hero-subtitle mb-4">Promotional video</p>
+                <p class="hero-description mb-5">Promotional video editing project for a Weather App, focused on delivering clear, engaging, and visually appealing content to effectively communicate application features and encourage user adoption.</p>
+                <div class="hero-buttons">
+                    <a href="../index.html" class="btn btn-light btn-lg rounded-pill px-5 me-3 shadow-lg">
+                        <i class="fas fa-arrow-left me-2"></i> Back to Portfolio
+                    </a>
+                    <button onclick="openVideoModal()" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-lg">
+                        <i class="fas fa-video me-2"></i> See Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <!-- Stars Background -->
+        <div class="content-stars"></div>
+
+        <!-- Project Photo Section -->
+        <div class="section" id="project-photo">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Project Photo</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="../assets/image/project/weather app.png" alt="Weather App Project Image" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Description Section -->
+        <div class="section" id="project-description">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Project Description</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="about-text">
+                            <p>This project involved the creation of a promotional video for a Weather App developed as part of a group-based application development assignment, with the objective of introducing the application, highlighting its core features, and communicating its benefits to potential users through engaging visual storytelling. I was responsible for editing and producing the promotional video, ensuring that the visual content accurately represented the application’s functionality and aligned with the overall project concept. The video was designed with a strong emphasis on clarity, pacing, and visual coherence, combining motion, text, and transitions to convey information concisely and attract user attention, ultimately serving as a key supporting element that enhanced the application’s presentation and overall appeal.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Reflection Section -->
+        <div class="section" id="project-reflection">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Project Reflection</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="about-text">
+                            <p>The project focused on producing a promotional video to support the presentation of a Weather App developed collaboratively by a team. My primary responsibility was video editing, which included structuring the visual flow, selecting appropriate scenes, applying transitions, and synchronizing visuals with text to create a cohesive and informative promotional video. The video served as a communication tool to complement the technical aspects of the application.</p>
+                            <p>This experience strengthened my understanding of the role of video content in promoting digital applications and shaping user perception. I learned that effective video editing goes beyond visual aesthetics, requiring clear messaging, structured storytelling, and consistency with the product being promoted. Working within a team environment also highlighted the importance of coordination, as the promotional video needed to accurately reflect the features and purpose of the application developed by the group.</p>
+                            <p>Moving forward, I plan to further develop my skills in video editing and digital promotion by exploring advanced storytelling techniques, motion graphics, and user-focused promotional strategies. I also aim to improve my ability to align multimedia content with application functionality and user needs. This project serves as a strong foundation for applying video-based communication more strategically in future academic and professional projects involving digital products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Used Section -->
+        <div class="section" id="tools-used">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tools Used</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="tech-badge tilt reveal">
+                            <div class="tech-icon"><img src="../assets/image/tools/premiere.png" alt="Premiere"></div>
+                            <div class="tech-name">Premiere</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer py-5">
+            <div class="container text-center">
+                <p class="m-0">© <span id="year"></span> Guruh Putra Mahendra. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <video controls>
+                <source src="../assets/video/video promosi dan demo weather app.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="cert-modal-close" onclick="closeVideoModal()">&times;</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // IntersectionObserver reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Parallax effect on scroll for stars layers
+        const parallax = () => {
+            const sc = window.scrollY || document.documentElement.scrollTop;
+            document.querySelectorAll('.content-stars').forEach(s => {
+                s.style.transform = `translateY(${sc * 0.15}px)`;
+            });
+        };
+        window.addEventListener('scroll', parallax, { passive: true });
+
+        // Tilt hover for cards
+        const tiltEls = document.querySelectorAll('.tilt');
+        tiltEls.forEach(card => {
+            const rect = () => card.getBoundingClientRect();
+            const onMove = (e) => {
+                const r = rect();
+                const x = e.clientX - r.left;
+                const y = e.clientY - r.top;
+                const rx = ((y / r.height) - 0.5) * -10;
+                const ry = ((x / r.width) - 0.5) * 10;
+                card.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+            };
+            const reset = () => {
+                card.style.transform = '';
+            };
+            card.addEventListener('mousemove', onMove);
+            card.addEventListener('mouseleave', reset);
+        });
+
+        // Floating stars reacting to mouse (hero)
+        const stars = document.querySelector('.stars');
+        if (stars) {
+            window.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                stars.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
+
+        // Video modal functions
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.style.display = 'block';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('videoModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

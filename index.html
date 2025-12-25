@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Guruh Putra Mahendra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<style>
+/* Professional profile photo sizing for About section */
+.about-image { margin: 0 auto; max-width: clamp(280px, 42vw, 420px); }
+.about-photo-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(6, 182, 212, 0.35);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
+  box-shadow: 0 18px 50px rgba(6, 182, 212, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  aspect-ratio: 4 / 5;
+}
+.about-photo-card:hover {
+  transform: translateY(-4px);
+  border-color: #06b6d4;
+  box-shadow: 0 24px 60px rgba(6, 182, 212, 0.28);
+}
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 992px) {
+  .about-image { max-width: clamp(260px, 55vw, 380px); }
+}
+@media (max-width: 576px) {
+  .about-image { max-width: clamp(220px, 70vw, 320px); }
+}
+/* Fallback heading visibility inside About section */
+.about-section h2:not(.about-name) {
+  color: #e2e8f0;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: .75rem;
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero" id="hero">
+        <div class="stars"></div>
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <div class="hero-content text-center">
+                <div class="hero-badge mb-4">
+                    <span>Welcome to</span>
+                </div>
+                <h1 class="hero-title display-1 fw-900 mb-4">
+                    PORTOFOLIO
+                </h1>
+                <p class="hero-subtitle mb-4">Guruh Putra Mahendra</p>
+                <p class="hero-description mb-5"><span id="typing" data-text="Graphic Designer & UI/UX Designer"></span></p>
+                <div class="hero-buttons">
+                    <button class="btn btn-light btn-lg rounded-pill px-5 me-3 shadow-lg scroll-btn" data-target="#about">
+                        <i class="fas fa-arrow-down me-2"></i> Explore
+                    </button>
+                </div>
+                <div class="hero-scroll mt-5">
+                    <span class="scroll-text">Scroll to continue</span>
+                    <div class="scroll-down">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top transparent-navbar hidden">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Guruhpm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <!-- Stars Background -->
+        <div class="content-stars"></div>
+        
+        <!-- About Me & Skills Section -->
+        <div class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p class="portfolio-desc">Transforming ideas into digital experiences</p>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="about-image">
+                            <figure class="about-photo-card">
+                                <img src="assets/image/profile/guruh.JPG" alt="Foto Guruh Putra Mahendra" class="about-photo" loading="eager" fetchpriority="high">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>Hello, I'm <br>Guruh Putra Mahendra</h2>
+                        <p class="about-text">
+                            I'm an information technology student with a keen interest in <span class="text-accent">Graphic Designer</span> and <span class="text-accent">UI/UX Designer</span>. I focus on creating engaging digital experiences and always strive to provide the best solutions in every project I work on.
+                        </p>
+                        <div class="about-actions d-flex flex-wrap align-items-center gap-3 mt-3">
+                            <a href="assets/documents/CV.Guruh Putra Mahendra (1).pdf" download="CV_Guruh_Putra_Mahendra.pdf" class="btn btn-light rounded-pill px-4 shadow-lg">
+                                <i class="fas fa-file-arrow-down me-2"></i> Download CV
+                            </a>
+                            <a href="#portfolio" class="btn btn-outline-light rounded-pill px-4 shadow-lg scroll-btn" data-target="#portfolio">
+                                <i class="fas fa-briefcase me-2"></i> My Project
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="section portfolio-section" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Portfolio Showcase</h2>
+                    <p class="portfolio-desc">Explore my journey through projects, certifications, and technical expertise. Each <br> section represents a milestone in my continuous learning path.</p>
+                    <div class="header-line"></div>
+                </div>
+                <!-- Portfolio Tabs -->
+                <div class="portfolio-tabs reveal-group mb-4">
+                    <button class="tab active reveal" data-filter="projects"><i class="fa-solid fa-code me-2"></i>Projects</button>
+                    <button class="tab reveal" data-filter="certificates"><i class="fa-regular fa-id-card me-2"></i>Certificates</button>
+                    <button class="tab reveal" data-filter="tech"><i class="fa-solid fa-atom me-2"></i>Tools</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="row g-4 portfolio-grid reveal-group">
+                    <!-- Item 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="assets/image/project/GETEKSI 2025.png" alt="GETEKSI 2025 Project Image">
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>GETEKSI 2025</h5>
+                                <p class="portfolio-desc">Modern social media feed design for an event, focusing on visual consistency, clear information hierarchy, and audience engagement.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <p class="portfolio-desc">Project based</p>
+                                    <a href="projects/geteksi.html" class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="assets/image/project/HIMAPRODI TI.png" alt="HIMAPRODI TI Project Image">
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>HIMAPRODI TI</h5>
+                                <p class="portfolio-desc">Instagram feed design project for HIMAPRODI TI, focused on creating visually consistent and informative content to strengthen organizational branding and increase audience engagement across social media.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <p class="portfolio-desc">Project Based</p>
+                                    <a href="projects/himaprodi.html" class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="assets/image/project/INFINITY 2024.png" alt="INFINITY 2024 Project Image">
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>INFINITY 2024</h5>
+                                <p class="portfolio-desc">Instagram feed design project for the INFINITY event, focused on delivering a cohesive visual identity and clear storytelling to strengthen event branding and audience engagement on social media.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <p class="portfolio-desc">Project Based</p>
+                                    <a href="projects/infinity.html" class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="assets/image/project/VISHIRE.png" alt="VISHIRE Project Image">
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>VISHIRE</h5>
+                                <p class="portfolio-desc">Modern mobile app interface design with a focus on component consistency and ease of navigation.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <p class="portfolio-desc">Project Based</p>
+                                    <a href="projects/vishire.html" class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <img src="assets/image/project/weather app.png" alt="weather app Project Image">
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>WEATHER APP</h5>
+                                <p class="portfolio-desc">Promotional video editing project for a Weather App, focused on delivering clear, engaging, and visually appealing content to effectively communicate application features and encourage user adoption.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <p class="portfolio-desc">Project Based</p>
+                                    <a href="projects/weather-app.html" class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="projects">
+                        <div class="portfolio-card tilt reveal">
+                            <div class="portfolio-preview">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-body">
+                                <h5>Prototype App</h5>
+                                <p class="portfolio-desc">Prototipe interaktif level tinggi dengan alur pengguna yang jelas.</p>
+                                <div class="card-actions d-flex justify-content-between align-items-center">
+                                    <a href="#" class="link-demo" target="_blank" rel="noopener">Live Demo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
+                                    <button class="btn btn-details btn-sm">Details <i class="fa-solid fa-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Certificates -->
+                    <div class="col-12 col-md-6 col-lg-4 portfolio-item" data-category="certificates">
+                        <div class="cert-card tilt reveal">
+                            <div class="cert-preview" data-src="assets/image/certif/certificate phyton_pages-to-jpg-0001.jpg">
+                                <img src="assets/image/certif/certificate phyton_pages-to-jpg-0001.jpg" alt="Certificate 01">
+                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="col-6 col-md-4 col-lg-3 portfolio-item" data-category="tech">
+                        <div class="tech-badge tilt reveal">
+                            <div class="tech-icon"><img src="assets/image/tools/canva.png" alt="Canva"></div>
+                            <div class="tech-name">Canva</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 portfolio-item" data-category="tech">
+                        <div class="tech-badge tilt reveal">
+                            <div class="tech-icon"><img src="assets/image/tools/figma.png" alt="Figma"></div>
+                            <div class="tech-name">Figma</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 portfolio-item" data-category="tech">
+                        <div class="tech-badge tilt reveal">
+                            <div class="tech-icon"><img src="assets/image/tools/photoshop.png" alt="Photoshop"></div>
+                            <div class="tech-name">Photoshop</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 portfolio-item" data-category="tech">
+                        <div class="tech-badge tilt reveal">
+                            <div class="tech-icon"><img src="assets/image/tools/premiere.png" alt="Premiere"></div>
+                            <div class="tech-name">Premiere</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Me</h2>
+                    <p class="portfolio-desc">Let's connect and discuss your next project</p>
+                    <div class="header-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-socials text-center">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-4 col-sm-6">
+                                    <a href="https://www.instagram.com/guruhpm_?igsh=MTZxNWlqMHgwdnViMg==" aria-label="Instagram" class="contact-link scale-in stagger-1" target="_blank" rel="noopener noreferrer">
+                                        <div class="contact-card">
+                                            <i class="fab fa-instagram"></i>
+                                            <h5>Instagram</h5>
+                                            <p>Follow me</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <a href="https://www.linkedin.com/in/guruhputramahendra" aria-label="LinkedIn" class="contact-link scale-in stagger-2" target="_blank" rel="noopener noreferrer">
+                                        <div class="contact-card">
+                                            <i class="fab fa-linkedin"></i>
+                                            <h5>LinkedIn</h5>
+                                            <p>Connect professionally</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=guruhputra306@gmail.com" aria-label="Email" class="contact-link scale-in stagger-3" target="_blank" rel="noopener noreferrer">
+                                        <div class="contact-card">
+                                            <i class="fas fa-envelope"></i>
+                                            <h5>Email</h5>
+                                            <p>Send me a message</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate Modal -->
+        <div id="certModal" class="cert-modal">
+            <div class="cert-modal-content">
+                <span class="cert-modal-close">&times;</span>
+                <img id="certModalImg" src="" alt="Certificate">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer py-5">
+            <div class="container text-center">
+                <p class="m-0">© <span id="year"></span> Guruh Putra Mahendra. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Smooth scroll to target section
+        document.querySelectorAll('.scroll-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-target');
+                const el = target ? document.querySelector(target) : null;
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Download CV (placeholder)
+        document.getElementById('downloadCvBtn')?.addEventListener('click', () => {
+            alert('CV belum tersedia. Silakan hubungi saya untuk informasi lebih lanjut.');
+        });
+
+        // Typewriter effect for hero description (infinite typing with caret)
+        (function typewriter() {
+            const el = document.getElementById('typing');
+            if (!el) return;
+            const full = el.getAttribute('data-text') || 'Graphic Designer & UI/UX Designer';
+            const caret = document.createElement('span');
+            caret.setAttribute('aria-hidden', 'true');
+            caret.style.display = 'inline-block';
+            caret.style.width = '2px';
+            caret.style.height = '1em';
+            caret.style.background = '#22d3ee';
+            caret.style.marginLeft = '4px';
+            caret.style.verticalAlign = '-0.15em';
+            el.textContent = '';
+            el.after(caret);
+
+            let i = 0;
+            let dir = 1; // 1 typing forward, -1 deleting
+            const typingSpeed = 55;
+            const deletingSpeed = 35;
+            const pauseAtEnd = 1200;
+            const pauseAtStart = 600;
+
+            const run = () => {
+                el.textContent = full.slice(0, i);
+                if (dir === 1) {
+                    if (i < full.length) {
+                        i += 1;
+                        setTimeout(run, typingSpeed);
+                    } else {
+                        setTimeout(() => { dir = -1; run(); }, pauseAtEnd);
+                    }
+                } else {
+                    if (i > 0) {
+                        i -= 1;
+                        setTimeout(run, deletingSpeed);
+                    } else {
+                        setTimeout(() => { dir = 1; run(); }, pauseAtStart);
+                    }
+                }
+            };
+            run();
+
+            // caret blink
+            setInterval(() => {
+                caret.style.opacity = caret.style.opacity === '0' ? '1' : '0';
+            }, 500);
+        })();
+
+        // IntersectionObserver reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Parallax effect on scroll for stars layers
+        const parallax = () => {
+            const sc = window.scrollY || document.documentElement.scrollTop;
+            document.querySelectorAll('.content-stars').forEach(s => {
+                s.style.transform = `translateY(${sc * 0.15}px)`;
+            });
+        };
+        window.addEventListener('scroll', parallax, { passive: true });
+
+        // Tilt hover for cards
+        const tiltEls = document.querySelectorAll('.tilt');
+        tiltEls.forEach(card => {
+            const rect = () => card.getBoundingClientRect();
+            const onMove = (e) => {
+                const r = rect();
+                const x = e.clientX - r.left;
+                const y = e.clientY - r.top;
+                const rx = ((y / r.height) - 0.5) * -10;
+                const ry = ((x / r.width) - 0.5) * 10;
+                card.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+            };
+            const reset = () => {
+                card.style.transform = '';
+            };
+            card.addEventListener('mousemove', onMove);
+            card.addEventListener('mouseleave', reset);
+        });
+
+        // Floating stars reacting to mouse (hero)
+        const stars = document.querySelector('.stars');
+        if (stars) {
+            window.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 10;
+                const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                stars.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
+
+        // Portfolio tabs filter (simple)
+        (function portfolioTabs(){
+            const tabs = document.querySelectorAll('.portfolio-tabs .tab');
+            const items = document.querySelectorAll('.portfolio-item');
+            if (!tabs.length) return;
+            const show = (cat) => {
+                items.forEach(it => {
+                    const match = it.dataset.category === cat;
+                    it.style.display = match ? '' : 'none';
+                });
+            };
+            tabs.forEach(t => t.addEventListener('click', () => {
+                tabs.forEach(x => x.classList.remove('active'));
+                t.classList.add('active');
+                show(t.dataset.filter);
+            }));
+            const active = document.querySelector('.portfolio-tabs .tab.active');
+            if (active) show(active.dataset.filter);
+        })();
+
+        // Certificate Modal Functionality
+        (function certificateModal(){
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('certModalImg');
+            const closeBtn = document.querySelector('.cert-modal-close');
+
+            // Open modal when clicking on certificate preview
+            document.querySelectorAll('.cert-preview').forEach(preview => {
+                preview.addEventListener('click', function() {
+                    const src = this.getAttribute('data-src');
+                    if (src) {
+                        modalImg.src = src;
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent background scroll
+                    }
+                });
+            });
+
+            // Close modal when clicking close button
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+
+            // Close modal when clicking outside the modal content
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+
+        // End of scripts
+    </script>
+</body>
+</html>
