@@ -676,17 +676,37 @@ body {
     font-weight: 700;
     letter-spacing: 0.3px;
     transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-tabs .tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.portfolio-tabs .tab:hover::before {
+    left: 100%;
 }
 
 .portfolio-tabs .tab:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     border-color: #06b6d4;
+    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
 }
 
 .portfolio-tabs .tab.active {
     background: linear-gradient(135deg, rgba(99,102,241,0.3) 0%, rgba(6,182,212,0.25) 100%);
     color: #ffffff;
     box-shadow: 0 10px 30px rgba(6, 182, 212, 0.18);
+    transform: scale(1.05);
 }
 
 /* Grid */
@@ -989,11 +1009,288 @@ body {
     }
 }
 
-/* Footer */
+/* ===== NEW ANIMATION KEYFRAMES ===== */
+
+/* Fade In animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navbar animations */
+.navbar {
+    animation: slideInDown 0.6s ease-out;
+}
+
+.navbar-brand {
+    animation: fadeInLeft 0.7s ease-out;
+}
+
+.navbar-nav .nav-item {
+    animation: fadeInDown 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.navbar-nav .nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.navbar-nav .nav-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.navbar-nav .nav-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #06b6d4;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero section enhancements */
+.hero-badge {
+    animation: slideInDown 0.8s ease-out 0.1s both;
+}
+
+.hero-title {
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 0.9s ease-out 0.4s both;
+    color: #06b6d4;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.hero-description {
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.hero-buttons .btn {
+    animation: scaleIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+}
+
+.hero-scroll {
+    animation: fadeInUp 1.2s ease-out 0.8s both;
+}
+
+/* Section animations */
+.section-header h2 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.section-header .portfolio-desc {
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.section-header .header-line {
+    animation: scaleX 0.6s ease-out 0.2s both;
+    transform-origin: left;
+}
+
+@keyframes scaleX {
+    from {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+/* About section animations */
+.about-image {
+    animation: fadeInLeft 0.9s ease-out;
+}
+
+.about-photo-card {
+    animation: fadeInLeft 0.9s ease-out 0.1s both;
+}
+
+.col-lg-6 h2 {
+    animation: fadeInRight 0.9s ease-out 0.1s both;
+}
+
+.about-text {
+    animation: fadeInRight 0.9s ease-out 0.2s both;
+}
+
+.about-actions {
+    animation: fadeInRight 0.9s ease-out 0.3s both;
+}
+
+.about-actions .btn {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+.about-actions .btn:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.about-actions .btn:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.about-actions .btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Portfolio items animations */
+.portfolio-tabs .tab {
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+.portfolio-tabs .tab:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-tabs .tab:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-tabs .tab:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-card,
+.cert-card,
+.tech-badge {
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(1) .reveal {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(2) .reveal {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(3) .reveal {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(4) .reveal {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(5) .reveal {
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.portfolio-item:nth-child(6) .reveal {
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+/* Contact section animations */
+.contact-info-card {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.contact-info-grid .contact-info-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-info-grid .contact-info-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-info-grid .contact-info-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-cta {
+    animation: fadeInUp 0.9s ease-out 0.4s both;
+}
+
+/* Smooth scroll animations - fade in on scroll */
+.reveal {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer animations */
 .footer {
     background: linear-gradient(180deg, rgba(2, 6, 23, 0.8) 0%, rgba(2, 6, 23, 1) 100%);
     border-top: 1px solid rgba(6, 182, 212, 0.25);
     color: #a5f3fc;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.footer p {
+    animation: fadeInUp 0.9s ease-out 0.2s both;
 }
 
 .footer .social a {
@@ -1008,7 +1305,22 @@ body {
     background: rgba(6, 182, 212, 0.12);
     border: 1px solid rgba(6, 182, 212, 0.3);
     transition: all 0.25s ease;
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
 }
+
+.footer .social a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.footer .social a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.footer .social a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
 .footer .social a:hover {
     transform: translateY(-3px);
     color: #0f172a;
