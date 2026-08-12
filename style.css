@@ -1461,15 +1461,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 90vw;
+    max-height: 90vh;
     animation: modalFadeIn 0.3s ease-out;
 }
 
 .cert-modal-content img,
 .cert-modal-content video {
-    width: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
     height: auto;
+    object-fit: contain;
     display: block;
     margin: auto;
 }
@@ -1480,14 +1483,16 @@ body {
 }
 
 .cert-modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
+    position: fixed;
+    top: 20px;
+    right: 30px;
     color: #ffffff;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 10001;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .cert-modal-close:hover,
