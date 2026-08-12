@@ -178,3 +178,64 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
+
+// Language Toggle
+(function setupLanguageToggle() {
+    const defaultLang = 'en';
+    let currentLang = localStorage.getItem('portfolioLang') || defaultLang;
+
+    // Wait until DOM is fully loaded or run immediately if already loaded
+    function initLanguage() {
+        applyLanguage(currentLang);
+
+        // Event listeners
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                currentLang = lang;
+                localStorage.setItem('portfolioLang', lang);
+                applyLanguage(lang);
+            });
+        });
+    }
+
+    function applyLanguage(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+        const dict = translations[lang];
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+                el.innerHTML = dict[key];
+            }
+        });
+
+        // Update active class on toggle buttons if they exist
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active', 'fw-bold', 'text-info');
+                btn.classList.remove('text-secondary');
+            } else {
+                btn.classList.remove('active', 'fw-bold', 'text-info');
+                btn.classList.add('text-secondary');
+            }
+        });
+
+        // Specific handling for typewriter effect
+        const typingEl = document.getElementById('typing');
+        if (typingEl) {
+            if (lang === 'id') {
+                typingEl.setAttribute('data-text', "Desainer Grafis | Desainer UI/UX | Web Developer | Administrator Jaringan");
+            } else {
+                typingEl.setAttribute('data-text', "Graphic Designer | UI/UX Designer | Web Developer | Network Administrator");
+            }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLanguage);
+    } else {
+        initLanguage();
+    }
+})();

@@ -71,7 +71,7 @@
         <div class="container h-100 d-flex align-items-center justify-content-center">
             <div class="hero-content text-center">
                 <div class="hero-badge mb-4">
-                    <span>Welcome to</span>
+                    <span data-i18n="hero_welcome">Welcome to</span>
                 </div>
                 <h1 class="hero-title display-1 fw-900 mb-4">
                     PORTOFOLIO
@@ -83,7 +83,7 @@
                 <div class="hero-buttons">
                     <button class="btn btn-light btn-lg rounded-pill px-5 me-3 shadow-lg scroll-btn"
                         data-target="#about">
-                        <i class="fas fa-arrow-down me-2"></i> Explore
+                        <i class="fas fa-arrow-down me-2"></i> <span data-i18n="hero_explore">Explore</span>
                     </button>
                 </div>
             </div>
@@ -101,13 +101,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
+                        <a class="nav-link" href="#about" data-i18n="nav_about">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Me</a>
+                        <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact Me</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+                        <div class="lang-switch d-flex gap-2 bg-dark rounded-pill px-3 py-1 border border-secondary">
+                            <a href="#" class="lang-btn text-decoration-none" data-lang="en">EN</a>
+                            <span class="text-secondary">|</span>
+                            <a href="#" class="lang-btn text-decoration-none" data-lang="id">ID</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -123,8 +130,8 @@
         <div class="section about-section" id="about">
             <div class="container">
                 <div class="section-header">
-                    <h2>About Me</h2>
-                    <p class="portfolio-desc">Transforming ideas into digital experiences</p>
+                    <h2 data-i18n="about_title">About Me</h2>
+                    <p class="portfolio-desc" data-i18n="about_subtitle">Transforming ideas into digital experiences</p>
                     <div class="header-line"></div>
                 </div>
                 <div class="row align-items-center">
@@ -137,8 +144,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h2>Hello, I'm <br>Guruh Putra Mahendra, CNA</h2>
-                        <p class="about-text">
+                        <h2 data-i18n="about_greeting">Hello, I'm <br>Guruh Putra Mahendra, CNA</h2>
+                        <p class="about-text" data-i18n="about_desc">
                             I'm an information technology student with a keen interest in <span
                                 class="text-accent">Graphic Designer</span>, <span class="text-accent">UI/UX
                                 Designer</span>, <span class="text-accent">Web Developer</span>, and <span
@@ -150,11 +157,11 @@
                             <a href="assets/documents/CV.Guruh Putra Mahendra (1).pdf"
                                 download="CV_Guruh_Putra_Mahendra.pdf"
                                 class="btn btn-light rounded-pill px-4 shadow-lg">
-                                <i class="fas fa-file-arrow-down me-2"></i> Download CV
+                                <i class="fas fa-file-arrow-down me-2"></i> <span data-i18n="about_cv">Download CV</span>
                             </a>
                             <a href="#portfolio" class="btn btn-outline-light rounded-pill px-4 shadow-lg scroll-btn"
                                 data-target="#portfolio">
-                                <i class="fas fa-briefcase me-2"></i> My Project
+                                <i class="fas fa-briefcase me-2"></i> <span data-i18n="about_project">My Project</span>
                             </a>
 
                         </div>
@@ -167,18 +174,18 @@
         <div class="section portfolio-section" id="portfolio">
             <div class="container">
                 <div class="section-header">
-                    <h2>Portfolio Showcase</h2>
-                    <p class="portfolio-desc">Explore my journey through projects, certifications, and technical
+                    <h2 data-i18n="port_title">Portfolio Showcase</h2>
+                    <p class="portfolio-desc" data-i18n="port_desc">Explore my journey through projects, certifications, and technical
                         expertise. Each <br> section represents a milestone in my continuous learning path.</p>
                     <div class="header-line"></div>
                 </div>
                 <!-- Portfolio Tabs -->
                 <div class="portfolio-tabs reveal-group mb-4">
                     <button class="tab active reveal" data-filter="projects"><i
-                            class="fa-solid fa-code me-2"></i>Projects</button>
+                            class="fa-solid fa-code me-2"></i><span data-i18n="tab_projects">Projects</span></button>
                     <button class="tab reveal" data-filter="certificates"><i
-                            class="fa-regular fa-id-card me-2"></i>Certificates</button>
-                    <button class="tab reveal" data-filter="tech"><i class="fa-solid fa-atom me-2"></i>Tools</button>
+                            class="fa-regular fa-id-card me-2"></i><span data-i18n="tab_certs">Certificates</span></button>
+                    <button class="tab reveal" data-filter="tech"><i class="fa-solid fa-atom me-2"></i><span data-i18n="tab_tools">Tools</span></button>
                 </div>
 
                 <!-- Portfolio Grid -->
@@ -191,7 +198,7 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>GETEKSI 2025</h5>
-                                <p class="portfolio-desc">This project focused on the collaborative design of an
+                                <p class="portfolio-desc" data-i18n="proj_geteksi_desc">This project focused on the collaborative design of an
                                     Instagram feed for the GETEKSI event as a promotional and communication medium
                                     across pre-event, live event, and post-event phases. Using Adobe Photoshop, the
                                     design emphasized visual consistency through balanced color schemes, typography, and
@@ -200,8 +207,8 @@
                                     strategy successfully attracted audience attention and supported the event’s
                                     promotional goals.</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Project based</p>
-                                    <a href="projects/geteksi.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="proj_based">Project based</p>
+                                    <a href="projects/geteksi.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -215,15 +222,15 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>HIMAPRODI TI</h5>
-                                <p class="portfolio-desc">This project involved designing and managing the Instagram
+                                <p class="portfolio-desc" data-i18n="proj_himaprodi_desc">This project involved designing and managing the Instagram
                                     feed for HIMAPRODI TI as part of the KOMINFO division, serving as an official
                                     digital communication platform for organizational information, activity promotion,
                                     and event commemoration. The design emphasized visual consistency, clear information
                                     hierarchy, and alignment with the organization’s identity to ensure professional and
                                     effective audience communication.</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Project Based</p>
-                                    <a href="projects/himaprodi.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="proj_based">Project Based</p>
+                                    <a href="projects/himaprodi.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -237,14 +244,14 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>INFINITY 2024</h5>
-                                <p class="portfolio-desc">This project focused on designing an Instagram feed for the
+                                <p class="portfolio-desc" data-i18n="proj_infinity_desc">This project focused on designing an Instagram feed for the
                                     INFINITY event to support promotion and digital communication, emphasizing a
                                     cohesive visual identity that reflected the event’s theme and core messages. The
                                     design prioritized visual consistency, clear information hierarchy, and structured
                                     layouts to ensure a professional and engaging Instagram presence..</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Project Based</p>
-                                    <a href="projects/infinity.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="proj_based">Project Based</p>
+                                    <a href="projects/infinity.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -258,7 +265,7 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>VISHIRE</h5>
-                                <p class="portfolio-desc">VISHIRE is a mobile platform application developed for a User
+                                <p class="portfolio-desc" data-i18n="proj_vishire_desc">VISHIRE is a mobile platform application developed for a User
                                     Experience course, designed to centralize various design services in a practical,
                                     well-structured, and accessible interface. Originating from my proposed concept and
                                     refined through team collaboration, the application adopts a modern dark-themed
@@ -267,8 +274,8 @@
                                     color and typography selection, and ensuring visual consistency from the login page
                                     to the homepage to support intuitive navigation and efficient user interaction.</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Project Based</p>
-                                    <a href="projects/vishire.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="proj_based">Project Based</p>
+                                    <a href="projects/vishire.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -282,15 +289,15 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>WEATHER APP-PROMOTIONAL VIDEO</h5>
-                                <p class="portfolio-desc">This project involved producing a promotional video for a
+                                <p class="portfolio-desc" data-i18n="proj_weather_desc">This project involved producing a promotional video for a
                                     Weather App developed in a group-based application assignment, aimed at introducing
                                     the app, showcasing its core features, and communicating its benefits through
                                     engaging visual storytelling. I was responsible for editing and producing the video,
                                     focusing on clarity, pacing, and visual coherence to ensure the content accurately
                                     represented the application and enhanced its overall presentation and appeal.</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Project Based</p>
-                                    <a href="projects/weather-app.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="proj_based">Project Based</p>
+                                    <a href="projects/weather-app.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -304,13 +311,13 @@
                             </div>
                             <div class="portfolio-body">
                                 <h5>Network Administrator</h5>
-                                <p class="portfolio-desc">This project involves the design and simulation of an
+                                <p class="portfolio-desc" data-i18n="proj_cisco_desc">This project involves the design and simulation of an
                                     inter-building computer network using Cisco Packet Tracer, where two separate LANs
                                     are interconnected through routers using efficient IP subnetting and static routing
                                     to enable reliable data communication.</p>
                                 <div class="card-actions d-flex justify-content-between align-items-center">
-                                    <p class="portfolio-desc">Case Based</p>
-                                    <a href="projects/cisco.html" class="btn btn-details btn-sm">Details <i
+                                    <p class="portfolio-desc" data-i18n="case_based">Case Based</p>
+                                    <a href="projects/cisco.html" class="btn btn-details btn-sm" data-i18n="btn_details">Details <i
                                             class="fa-solid fa-arrow-right ms-1"></i></a>
                                 </div>
                             </div>
@@ -324,7 +331,7 @@
                                 data-src="assets/image/certif/certificate phyton_pages-to-jpg-0001.jpg">
                                 <img src="assets/image/certif/certificate phyton_pages-to-jpg-0001.jpg"
                                     alt="Certificate Python">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -335,7 +342,7 @@
                                 data-src="assets/image/certif/Certificate Detail - CODEPOLITAN_page-0001.jpg">
                                 <img src="assets/image/certif/Certificate Detail - CODEPOLITAN_page-0001.jpg"
                                     alt="Certificate Codepolitan">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -344,7 +351,7 @@
                         <div class="cert-card tilt reveal">
                             <div class="cert-preview" data-src="assets/image/certif/CC5ECBE13D (1)_page-0001.jpg">
                                 <img src="assets/image/certif/CC5ECBE13D (1)_page-0001.jpg" alt="Certificate dicoding">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -355,7 +362,7 @@
                                 data-src="assets/image/certif/Certificate Detail - CODEPOLITAN1_page-0001.jpg">
                                 <img src="assets/image/certif/Certificate Detail - CODEPOLITAN1_page-0001.jpg"
                                     alt="Certificate Codepolitan 2">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -364,7 +371,7 @@
                         <div class="cert-card tilt reveal">
                             <div class="cert-preview" data-src="assets/image/certif/Network Admin.png">
                                 <img src="assets/image/certif/Network Admin.png" alt="Certificate Network Admin">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -373,7 +380,7 @@
                         <div class="cert-card tilt reveal">
                             <div class="cert-preview" data-src="assets/image/certif/android dev_page-0001.jpg">
                                 <img src="assets/image/certif/android dev_page-0001.jpg" alt="Certificate Android Dev">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -382,7 +389,7 @@
                         <div class="cert-card tilt reveal">
                             <div class="cert-preview" data-src="assets/image/certif/certificate office.jpeg">
                                 <img src="assets/image/certif/certificate office.jpeg" alt="Certificate Office">
-                                <div class="cert-overlay"><i class="fa-solid fa-maximize me-2"></i>View Certificate
+                                <div class="cert-overlay" data-i18n="btn_view_cert"><i class="fa-solid fa-maximize me-2"></i>View Certificate
                                 </div>
                             </div>
                         </div>
@@ -484,8 +491,8 @@
         <div class="section contact-section" id="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p class="portfolio-desc">Let's collaborate on your next amazing project. I'm always open to new
+                    <h2 data-i18n="contact_title">Get In Touch</h2>
+                    <p class="portfolio-desc" data-i18n="contact_desc">Let's collaborate on your next amazing project. I'm always open to new
                         opportunities.</p>
                     <div class="header-line"></div>
                 </div>
@@ -503,8 +510,8 @@
                                     </div>
                                     <div class="card-content">
                                         <h4>Instagram</h4>
-                                        <p>Follow for latest designs and updates</p>
-                                        <span class="contact-link-text">Visit Profile <i
+                                        <p data-i18n="contact_ig_desc">Follow for latest designs and updates</p>
+                                        <span class="contact-link-text" data-i18n="contact_ig_link">Visit Profile <i
                                                 class="fas fa-arrow-right ms-2"></i></span>
                                     </div>
                                 </a>
@@ -517,8 +524,8 @@
                                     </div>
                                     <div class="card-content">
                                         <h4>LinkedIn</h4>
-                                        <p>Connect with me professionally</p>
-                                        <span class="contact-link-text">View Profile <i
+                                        <p data-i18n="contact_in_desc">Connect with me professionally</p>
+                                        <span class="contact-link-text" data-i18n="contact_in_link">View Profile <i
                                                 class="fas fa-arrow-right ms-2"></i></span>
                                     </div>
                                 </a>
@@ -531,8 +538,8 @@
                                     </div>
                                     <div class="card-content">
                                         <h4>Email</h4>
-                                        <p>Send me a message</p>
-                                        <span class="contact-link-text">Send Email <i
+                                        <p data-i18n="contact_em_desc">Send me a message</p>
+                                        <span class="contact-link-text" data-i18n="contact_em_link">Send Email <i
                                                 class="fas fa-arrow-right ms-2"></i></span>
                                     </div>
                                 </a>
@@ -554,12 +561,13 @@
         <!-- Footer -->
         <footer class="footer py-5">
             <div class="container text-center">
-                <p class="m-0">© <span id="year"></span> Guruh Putra Mahendra. All rights reserved.</p>
+                <p class="m-0">© <span id="year"></span><span data-i18n="footer_rights"> Guruh Putra Mahendra. All rights reserved.</span></p>
             </div>
         </footer>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
     <script>
         // Smooth scroll to target section
